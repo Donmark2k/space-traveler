@@ -1,18 +1,16 @@
-import { createSlice, createAsyncThunk } from '@redujs/toolkit';
-
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-    rockets : [],
-}
+  rockets: [],
+};
 
+const rocketSlice = createSlice({
+  name: 'rockets',
+  initialState,
+  reducers: {},
+  extraReducers(builder) {
 
-const rocketSlice = createSlice ({
-    name : 'rockets',
-    initialState,
-    reducers: {},
-    extraReducers : (builder) {
-
-    },
+  },
 });
 
 export default rocketSlice.reducer;
