@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import Badge from 'react-bootstrap/Badge';
 import { PropTypes } from 'prop-types';
-import { fetchRockets, reserveRocket } from '../redux/rockets/RocketsSlice';
+import { fetchRockets, reserveRocket } from '../redux/rockets/rocketSlice';
 
 function Rockets() {
   const dispatch = useDispatch();
