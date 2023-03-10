@@ -12,7 +12,7 @@ const rocketSlice = createSlice ({
     reducers: {},
     extraReducers : (builder) {
 
-    }
+    },
 });
 
 export default rocketSlice.reducer;
