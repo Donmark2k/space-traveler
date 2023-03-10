@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjx/toolkit';
-import [ createLogger ] from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import rocketReducer from './rockets/rocketSlice';
 import missionReducer from './missions/missionSlice';
 
