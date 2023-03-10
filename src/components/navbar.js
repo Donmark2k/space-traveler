@@ -23,7 +23,7 @@ function NavBar() {
             <NavLink className="nav-link" to="/" as={Link}>Rockets</NavLink>
             <NavLink className="nav-link" to="/missions" as={Link}>Missions</NavLink>
             <div className="d-none d-md-none d-lg-block mt-3 mb-3 vr" />
-            <NavLink className="nav-link" to="/myprofile" as={Link}>My profile</NavLink>
+            <NavLink className="nav-link" to="/profile" as={Link}>My profile</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

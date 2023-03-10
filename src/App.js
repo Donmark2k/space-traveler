@@ -7,12 +7,12 @@ import Profile from './components/profile';
 function App() {
   return (
     <div className="App">
-        <NavBar />
-        {/* <Routes>
-          <Route exact path="/" element={<Rockets />} />
-          <Route path="/missions" element={<Missions />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes> */}
+      <NavBar />
+      <Routes>
+        <Route exact path="/" element={<Rockets />} />
+        <Route path="/missions" element={<Missions />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </div>
   );
 }
