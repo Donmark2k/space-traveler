@@ -22,7 +22,20 @@ async()=> {
 const rocketSlice = createSlice({
   name: 'rockets',
   initialState, 
-  reducers: {},
+  reducers: {
+    reserveRocket: (state, payload) => ({
+      ...state,
+      rocketList: state.rocketList.map((rocket) => {
+        if (rocket.id === payload.payload) {
+          if (rocket.reserved === true) {
+            return { ...rocket, reserved: false };
+          }
+          return { ...rocket, reserved: true };
+        }
+        return rocket;
+      }),
+    }),
+  },
   extraReducers(builder) {
     builder.addCase(fetchRockets.pending, (state)=> ({
       ...state,
