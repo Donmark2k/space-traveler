@@ -10,11 +10,6 @@ const logger = createLogger({
     predicate: (getState, action) => action.type !== 'SOME_ACTION',
     // Collapse the logs by default
     collapsed, // takes a Boolean or optionally a Function that receives `getState` function for accessing current store state and `action` object as parameters. Returns `true` if the log group should be collapsed, `false` otherwise.
-    duration = false: Boolean, // print the duration of each action?
-    timestamp = true: Boolean, // print the timestamp with each action?
-    colors: ColorsObject, // colors for title, prev state, action and next state: https://github.com/LogRocket/redux-logger/blob/master/src/defaults.js#L12-L18
-    diff = false: Boolean, // (alpha) show diff between states?
-     diffPredicate, // (alpha) filter function for showing states diff, similar to `predicate`
   });
 
 
