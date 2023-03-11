@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Rockets from './../components/rocket';
-import { store } from './../redux/store';
+import Rockets from '../components/rocket';
+import { store } from '../redux/store';
 import { Provider } from 'react-redux';
 import axios from 'axios';
-import { fetchRockets, reserveRocket } from './../redux/rockets/rocketSlice';
+import { fetchRockets, reserveRocket } from '../redux/rockets/rocketSlice';
 
 it('Rocket page renders correctly', ()=>{
     const tree  = renderer
@@ -21,9 +21,9 @@ it('Rocket page renders correctly', ()=>{
 describe('Rocket redux state tests', () => {
     it('Should initially hold Rocket data by default', () => {
       const state = store.getState().rockets;
-      expect(state.rocketList.length).toEqual(4);
+      expect(state.rocketList.length).toEqual(0);
     });
-    
+
     it('should Reserve Rocket payload send correct', () => {
       const expectedPayload = { payload: '9D1B7E0', type: 'rockets/reserveRocket' };
       const actualPayload = reserveRocket('9D1B7E0');

@@ -1,21 +1,26 @@
-import { React, renderer } from 'react';
-import Mission from './../components/mission';
+import React from 'react';
+import Mission from '../components/mission';
 import { fetchMissions, joinMission } from '../redux/missions/missionSlice';
 import axios from 'axios';
-import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './../redux/store';
+import { store } from '../redux/store';
+import renderer from 'react-test-renderer';
 
-it('Rocket page renders correctly', ()=>{
-    const tree  = renderer
-    .create (
-        <Provider store ={store}>
-        <Mission />
+
+it('Mission page renders correctly', ()=>{
+    const tree = renderer
+    .create(
+      <React.StrictMode>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Mission />
+          </BrowserRouter>
         </Provider>
+      </React.StrictMode>,
     )
-    .toJSON ();
-    expect(tree).toMatchSnapshot();
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 })
 
 describe('Mission redux state tests', () => {
@@ -25,8 +30,8 @@ describe('Mission redux state tests', () => {
     });
   
     it('should Join Mission payload send correct', () => {
-      const expectedPayload = { payload: '9D1B7E0', type: 'missions/joinMission' };
-      const actualPayload = joinMission('9D1B7E0');
+      const expectedPayload = { payload: '9D1B7E5', type: 'missions/joinMission' };
+      const actualPayload = joinMission('9D1B7E5');
       expect(actualPayload).toEqual(expectedPayload);
     });
   

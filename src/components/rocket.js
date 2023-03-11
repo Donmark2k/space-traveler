@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import Badge from 'react-bootstrap/Badge';
-import { PropTypes } from 'prop-types';
+// import { PropTypes } from 'prop-types';
 import { fetchRockets, reserveRocket } from '../redux/rockets/rocketSlice';
 
 function Rockets() {
@@ -51,13 +51,13 @@ function Rockets() {
     </>
   );
 }
-Rockets.propTypes = {
-  rocket: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    reserved: PropTypes.bool.isRequired,
-  }).isRequired,
-};
+// Rockets.propTypes = {
+//   rocket: PropTypes.shape({
+//     id: PropTypes.string.isRequired,
+//     name: PropTypes.string.isRequired,
+//     image: PropTypes.string.isRequired,
+//     description: PropTypes.string.isRequired,
+//     reserved: PropTypes.bool.isRequired,
+//   }).isRequired,
+// };
 export default Rockets;

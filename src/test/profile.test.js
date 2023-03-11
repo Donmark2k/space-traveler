@@ -11,7 +11,7 @@ it('renders correctly', () => {
     const tree = renderer
       .create(
         <React.StrictMode>
-          <Provider store={myStore}>
+          <Provider store={store}>
             <BrowserRouter>
               <Profile />
             </BrowserRouter>
