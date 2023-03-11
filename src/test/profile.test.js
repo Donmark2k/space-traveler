@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
 import Profile from '../components/profile';
+import axios from 'axios';
+
 
 it('renders correctly', () => {
     const tree = renderer
