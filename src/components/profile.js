@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { useSelector } from 'react-redux';
 
 const Profile = () => {
-  const missions = useSelector((state) => state.missions.missionstore);
+  const missions = useSelector((state) => state.missions.missionList);
   const rockets = useSelector((state) => state.rockets.rocketList);
 
   return (
@@ -18,7 +18,7 @@ const Profile = () => {
           className="ps-lg-5"
         >
           <h2>My Missions</h2>
-          {/* <ListGroup>
+          <ListGroup>
             {missions.filter((mission) => mission.reserved === true).length > 0 ? (
               missions
                 .filter((mission) => mission.reserved === true)
@@ -30,7 +30,7 @@ const Profile = () => {
             ) : (
               <ListGroup.Item>No missions have been reserved.</ListGroup.Item>
             )}
-          </ListGroup> */}
+          </ListGroup>
         </Col>
         <Col
           sm={12}
@@ -39,7 +39,7 @@ const Profile = () => {
           className="pe-lg-5"
         >
           <h2>My Rockets</h2>
-          {/* <ListGroup>
+          <ListGroup>
             {rockets.filter((rocket) => rocket.reserved === true).length > 0 ? (
               rockets
                 .filter((rocket) => rocket.reserved === true)
@@ -51,7 +51,7 @@ const Profile = () => {
             ) : (
               <ListGroup.Item>No rockets have been reserved.</ListGroup.Item>
             )}
-          </ListGroup> */}
+          </ListGroup>
         </Col>
 
       </Row>
