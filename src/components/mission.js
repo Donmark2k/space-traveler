@@ -19,47 +19,55 @@ const Mission = () => {
   };
 
   return (
-    <div className="px-5 pr-5">
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>{}</th>
+<div className="px-5 pr-5">
+  <Table striped bordered hover responsive>
+    <thead>
+      <tr>
+        <th>Mission</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>{}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        missions.map((mission) => (
+          <tr key={mission.mission_id}>
+            <td className="fw-bold" style={{ width: '10%' }}>
+              <div className="d-flex flex-column flex-md-row">
+                <span className="me-md-2">Mission:</span>
+                <span>{mission.mission_name}</span>
+              </div>
+            </td>
+            <td style={{ width: '45%' }}>
+              <div className="d-flex flex-column flex-md-row">
+                <span className="me-md-2">Description:</span>
+                <span>{mission.description}</span>
+              </div>
+            </td>
+            <td className="text-center align-middle" style={{ width: '5%' }}>
+              <Badge bg={mission.reserved ? ('info') : ('secondary')}>
+                {mission.reserved ? ('Active Member') : ('NOT A MEMBER')}
+              </Badge>
+            </td>
+            <td className="text-center align-middle" style={{ width: '10%' }}>
+              <Button
+                id={mission.mission_id}
+                variant={mission.reserved ? ('outline-danger') : ('outline-secondary')}
+                size="md"
+                onClick={missionHandler}
+              >
+                {mission.reserved ? ('Leave Misson') : ('Join Misson')}
+              </Button>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {
-          missions.map((mission) => (
-            <tr key={mission.mission_id}>
-              <td className="fw-bold " style={{ width: '10%' }}>{mission.mission_name}</td>
-              <td style={{ width: '45%' }}>
-                {mission.description}
-              </td>
-              <td className="text-center align-middle" style={{ width: '5%' }}>
-                <Badge bg={mission.reserved ? ('info') : ('secondary')}>
-                  {mission.reserved ? ('Active Member') : ('NOT A MEMBER')}
-                </Badge>
-              </td>
-              <td className="text-center align-middle" style={{ width: '10%' }}>
-                <Button
-                  id={mission.mission_id}
-                  variant={mission.reserved ? ('outline-danger') : ('outline-secondary')}
-                  size="md"
-                  onClick={missionHandler}
-                >
-                  {mission.reserved ? ('Leave Misson') : ('Join Misson')}
-                </Button>
-              </td>
-            </tr>
-          ))
-        }
+        ))
+      }
+    </tbody>
+  </Table>
+</div>
 
-        </tbody>
-      </Table>
-
-    </div>
+    
 
   );
 };
