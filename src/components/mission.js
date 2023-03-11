@@ -19,18 +19,18 @@ const Mission = () => {
   };
 
   return (
-<div className="px-5 pr-5">
-  <Table striped bordered hover responsive>
-    <thead>
-      <tr>
-        <th>Mission</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>{}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
+    <div className="px-5 pr-5">
+      <Table striped bordered hover responsive>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>{}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
         missions.map((mission) => (
           <tr key={mission.mission_id}>
             <td className="fw-bold" style={{ width: '10%' }}>
@@ -63,11 +63,9 @@ const Mission = () => {
           </tr>
         ))
       }
-    </tbody>
-  </Table>
-</div>
-
-    
+        </tbody>
+      </Table>
+    </div>
 
   );
 };
