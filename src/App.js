@@ -5,7 +5,6 @@ import Rockets from './components/rocket';
 import Profile from './components/profile';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
   return (
     <div className="App">
