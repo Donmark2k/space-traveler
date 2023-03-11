@@ -56,5 +56,5 @@ const missionSlice = createSlice({
       }));
   },
 });
-
+export const { joinMission } = missionSlice.actions;
 export default missionSlice.reducer;
